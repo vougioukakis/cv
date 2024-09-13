@@ -1,7 +1,7 @@
 /* to do 
 add new things in starting page
 make the thing feel more alive its dead*/
-.loading{
+#load-screen{
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@ make the thing feel more alive its dead*/
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 /* rest of page */
 body {
@@ -24,15 +24,16 @@ body {
     #EF4040
     #FFA732
     */
-
+    background-color: black;
+    /*background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%);*/
+    animation: gradient 80s ease infinite;
+    background-size: 230vh;
+    background-attachment: fixed;
     
-    background-image: url("src/blue-wavy-background-webp.webp");
-    background-color:#000000;
     font-family: 'Arial', 'sans-serif';
     margin: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
-    background-size: 230vh;
     position: relative;
     min-height: 100vh;
     overflow-y:auto;
@@ -44,6 +45,45 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+body::before{
+    background-image: url('src/blue-wavy-background-webp.webp');
+    content: "";
+    background-size: 230vh;
+    animation: gradient 140s ease infinite;
+    position: absolute;
+    min-height: 100vh;
+
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    20% {
+        background-position: 80% 80%;
+    }
+    35% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    65%{
+        background-position: 0% 100%;
+    }
+    82%{
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera
 
 leaving this here for debugging
@@ -51,7 +91,6 @@ leaving this here for debugging
 body::-webkit-scrollbar {
     display: none;
 }
-
 
 
 .footer {
@@ -62,7 +101,7 @@ body::-webkit-scrollbar {
     height: 6rem;            /* footer height */
     /*! padding-top: 1rem; */
     margin-top: auto;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 
@@ -127,6 +166,27 @@ nav {
 }
 
 /*-------- MAIN : about me and right side cards --------*/
+.card{ /* general card class */
+
+    /*background: rgba(255, 255, 255, 0.5); /*this will be transparent */
+    border-radius: 0px;
+    padding: 1em;
+    padding-bottom: 1.3em;
+
+    border-radius: 0px;
+    /*background: #4CB9E7;*/
+
+    /*background-image: url('src/blue-wavy-background-blur.webp');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), inset 0px 100px 100px 200px rgba(255, 255, 255, 0.08);
+    
+    /*transition: backdrop-filter 2s ease-in-out;*/
+    -webkit-backdrop-filter: blur(30px); /* will become blur(30px) from javascript */
+    backdrop-filter: blur(30px);
+}
 
 #content-wrap {
     display: flex;
@@ -172,34 +232,13 @@ nav {
 
 .contents-x2{ /* holds multiple content items to span multiple columns */
     /*! margin: 0 auto; */
-
     display: flex;
     flex-direction: row;
     gap: 10px;
     padding-top: 1em;
 }
 
-.card{ /* general card class */
 
-    /*background: rgba(255, 255, 255, 0.5); /*this will be transparent */
-    border-radius: 0px;
-    padding: 1em;
-    padding-bottom: 1.3em;
-
-    border-radius: 0px;
-    /*background: #4CB9E7;*/
-
-    background-image: url('src/blue-wavy-background-blur.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: top;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), inset 0px 100px 100px 200px rgba(255, 255, 255, 0.08);
-    
-    transition: backdrop-filter 2s ease-in-out;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none; /* will become blur(30px) from javascript */
-}
 
 .home {
     z-index: 1;
@@ -313,14 +352,6 @@ nav {
 
 /*------- PICS -------*/
 
-/* images of the learning resource websites*/
-#links img {
-    /*border: solid rgb(79, 79, 79) 2px;*/
-    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
-    width: 100px;
-    height: 50px;
-}
-
 .uoc {
     width: 50px;
     margin: 0 auto;
@@ -328,73 +359,12 @@ nav {
 }
 
 
-/*------- POSTS -------*/
-
-.post{ /* post card */
-
-    border-radius: 0px;
-
-    border-radius: 0px;
-    /*background: #4CB9E7;*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), inset 0px 100px 100px 200px rgba(0, 0, 0, 0.08);
-
-    transition: box-shadow .2s;
-
-    cursor: pointer;
-    text-decoration: none;
-
-}
-.post:hover{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35), inset 0px 100px 100px 200px rgba(0, 0, 0, 0.08);
-}
-
-.post-title-cont { 
-    /*! padding-inline: 1em; */
-    color: #d1ecf8;
-    text-shadow: 5px 5px 15px black;
-    max-width: 100%;
-    max-height: 20%;
-    word-wrap: break-word;
-    /*! word-break: break-all; */
-    /*! padding-bottom: em; */
-
-    
-}
-
-.post-title{
-    margin:0;
-    padding: 1em;
-    background: rgba(0,0,0,0.4);
-}
-
-.post-source-cont {
-    margin: 0;
-    padding: 0;
-    /*! padding: ; */
-}
-
-.post-source{ /* p text */
-    padding-inline:1em;
-    color: #d1ecf8;
-    margin: 0;
-    padding-block: .5em;
-    background: rgba(0,0,0,0.7);
-}
-
-a.fill-div {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-}
-
 /*------- BUTTONS -------*/
 
 .buttons-div{
     padding-block: 0;
 }
+
 .buttons{
     display: inline-block;
     text-decoration: none;
@@ -410,7 +380,13 @@ a.fill-div {
     padding-inline: 26px;
 
 
-    padding: 3% 8%;
+    padding: 1.8% 6%;
+}
+
+.button-icon{
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
 }
 
 .buttons:hover {
@@ -547,68 +523,3 @@ a.fill-div {
         height: auto;
     }
 }
-
-/*
-loading
-.loading{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    z-index: 999;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.4s ease-in-out;
-}
-.wave {
-    width: 5px;
-    height: 100px;
-    background: linear-gradient(45deg, cyan, #fff);
-    margin: 10px;
-    animation: wave 1s linear infinite;
-    border-radius: 20px;
-  }
-  .wave:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-  .wave:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-  .wave:nth-child(4) {
-    animation-delay: 0.3s;
-  }
-  .wave:nth-child(5) {
-    animation-delay: 0.4s;
-  }
-  .wave:nth-child(6) {
-    animation-delay: 0.5s;
-  }
-  .wave:nth-child(7) {
-    animation-delay: 0.6s;
-  }
-  .wave:nth-child(8) {
-    animation-delay: 0.7s;
-  }
-  .wave:nth-child(9) {
-    animation-delay: 0.8s;
-  }
-  .wave:nth-child(10) {
-    animation-delay: 0.9s;
-  }
-  
-  @keyframes wave {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-}
-*/

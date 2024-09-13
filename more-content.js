@@ -66,7 +66,7 @@ function loadEducationContent() {
     const learning_hub_content = `
     <div class="contents">
               <div class="card" id="links">
-                  <h3 class="card-title">Some nice learning resources</h3>
+                  <h3 class="card-title">Some nice and free learning resources</h3>
                       <a href="https://collegecompendium.org/explore"><img src="src/colcomp.png"></a>
   
                       <a href="https://ocw.mit.edu/"><img src="src/ocw.png"></a>
@@ -74,6 +74,8 @@ function loadEducationContent() {
                       <a href="https://www.freecodecamp.org/"><img src="src/fcc.png"></a>
   
                       <a href="https://linuxjourney.com/"><img src="src/lj.png"></a>
+
+                      <a href="https://www.theodinproject.com/"><img src="src/odin.png"></a>
   
                       <a href="https://bulletin.math.uoc.gr/work/autolist.php?decade=2020"><img src="src/hms.png"></a>
               </div>
