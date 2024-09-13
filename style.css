@@ -24,9 +24,10 @@ body {
     #EF4040
     #FFA732
     */
+    background-image: url('src/blue-wavy-background-webp.webp');
     background-color: black;
     /*background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%);*/
-    animation: gradient 150s ease infinite;
+    
     background-size: 230vh;
     background-attachment: fixed;
     
@@ -50,8 +51,7 @@ body::before{
     background-image: url('src/blue-wavy-background-webp.webp');
     content: "";
     background-size: 230vh;
-    animation: gradient 240s ease infinite;
-    position: absolute;
+    position: relative;
     min-height: 100vh;
 
     top: 0px;
@@ -401,10 +401,25 @@ nav {
 .bg-cont{
     overflow: hidden;
 }
+@media only screen and (min-width: 900px) {
+    body {
+        animation: gradient 150s ease infinite;
+    }
+    body::before{
+        animation: gradient 240s ease infinite;
+    }
 
 
+}
 @media only screen and (max-width: 900px) {
-
+    body{
+        background-color: #174f7d;
+    }
+    body::before{
+        background-image: none;
+        opacity: 0;
+    }
+    
     .contents-x2{
         flex-direction: column;
     }
@@ -432,6 +447,14 @@ nav {
     .home p{
         font-size: 16px;
     }
+
+    .card{
+        background-image: url('src/blue-wavy-background-blur.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: top;
+    }
     
 
     
@@ -444,6 +467,10 @@ nav {
         background-image: none;
         background-color: #174f7d;
         padding-bottom: 26px;
+    }
+    body::before{
+        background-image: none;
+
     }
     #content-wrap{
         flex-direction: column;
@@ -509,6 +536,8 @@ nav {
 
     .card {
         width: auto;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .contents{
