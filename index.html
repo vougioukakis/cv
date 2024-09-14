@@ -17,8 +17,7 @@
 
 <body>
 
-
-    <audio loop autoplay>
+    <audio id="bg-sound" loop autoplay>
         <source src="src/sounds/bg-sound.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -65,7 +64,9 @@
                 </div>
 
                 <footer class="footer">
-
+                    <div class="options">
+                        <a onclick="toggleMute();"><img id="sound-option-icon" src="src/icons/play.png" style="width: 4vh;"></a>
+                    </div>
                     <div class="buttons-div">
                         <a href="https://www.linkedin.com/in/nikolaos-vougioukakis-66a2b7256/" style="background-color: #0077b5;" target="_blank" class="buttons"><img class="button-icon"  src="src/icons8-linkedin.svg"></a>
                         <a href="https://github.com/vougioukakis" class="buttons" target="_blank"><img class="button-icon"  src="src/icons8-github.svg"></a>

@@ -1,4 +1,6 @@
 //todo: add ambient bg sound and sound effects on click
+let click_audio = document.getElementById("click-sound");
+let muted = 0;
 
 function loadContent(contentId) {
   const mainContent = document.getElementById("mainContent");
@@ -33,9 +35,10 @@ function loadContent(contentId) {
 
 // sounds on click 
 function play() {
-  var audio = document.getElementById("click-sound");
-  audio.play();
-  console.log('click!');  
+  if(!muted){
+    click_audio.play();
+    console.log('click!');
+  }
 }
 
 function addClickEventListenersForSound(){
@@ -45,7 +48,27 @@ function addClickEventListenersForSound(){
   });
 }
 
+function toggleMute(){
+  let bgSound = document.getElementById("bg-sound");
+  let soundIcon = document.getElementById("sound-option-icon");
+  console.log("toggle");
+
+  if (bgSound.paused) {
+    muted = 0;
+    bgSound.play();
+    soundIcon.src = "src/icons/play.png";
+
+
+  } else {
+    muted = 1;
+    bgSound.pause();
+    soundIcon.src = "src/icons/mute.png";
+
+  }
+}
 addClickEventListenersForSound();
+
+
 /*
 window.onload = function() {
 
