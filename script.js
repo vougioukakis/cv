@@ -99,7 +99,7 @@ function delete_loading_screen() {
 window.onload = function () {
   loadContent("home");
   document.getElementById("load-screen").style.opacity = 0;
-  setTimeout(delete_loading_screen, 1400);
+  setTimeout(delete_loading_screen, 1600);
 
 };
 
