@@ -56,13 +56,13 @@ function toggleMute(){
   if (bgSound.paused) {
     muted = 0;
     bgSound.play();
-    soundIcon.src = "src/icons/play.png";
+    soundIcon.src = "src/icons/sound-on.svg";
 
 
   } else {
     muted = 1;
     bgSound.pause();
-    soundIcon.src = "src/icons/mute.png";
+    soundIcon.src = "src/icons/sound-off.svg";
 
   }
 }
