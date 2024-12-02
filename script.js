@@ -1,6 +1,7 @@
-//todo: add ambient bg sound and sound effects on click
 let click_audio = document.getElementById("click-sound");
 let muted = 0;
+
+document.getElementById("curr-year").innerHTML = new Date().getFullYear();
 
 function loadContent(contentId) {
   const mainContent = document.getElementById("mainContent");
