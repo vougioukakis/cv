@@ -1,7 +1,7 @@
 let click_audio = document.getElementById("click-sound");
 let muted = 0;
 
-document.getElementById("curr-year").innerHTML = new Date().getFullYear();
+document.getElementById("curr-year").innerHTML = "Nikolaos Vougioukakis " + new Date().getFullYear();
 
 function loadContent(contentId) {
   const mainContent = document.getElementById("mainContent");
