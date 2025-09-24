@@ -86,7 +86,7 @@ function loadProjectsContent() {
     const projectsContent = `
           <div class="contents">
               <div class="card">
-                  <h3 class="card-title"><strong>Financers:</strong> a personal finanance SaaS</h3>
+                  <h3 class="card-title">Financers: a personal finanance SaaS</h3>
                     <p class="proj-description">A personal finance web application that helps users
                      manage their income, expenses, and budgets effectively, while providing analytics
                      and insights. Built with NextJS, it offers features like transaction tracking,
@@ -106,7 +106,11 @@ function loadProjectsContent() {
               </div>
               <div class="card">
                   <h3 class="card-title">Fruity</h3>
-                  <p class="proj-description"></p>
+                  <p class="proj-description">An interactive, user-friendly web app 
+                  that identifies fruits from images and displays nutritional information 
+                  and fun facts. Focused on creating an intuitive and visually appealing 
+                  interface to enhance user engagement and ease of use. Built with JS, Python
+                  (Quart) and Pytorch.</p>
                   <img class="proj-image" src="">
                   <img class="proj-image" src="">
               </div>
