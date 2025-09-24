@@ -1,114 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" as="image" href='src/blue-wavy-background-webp.webp'>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style2.css"></noscript>
-    <link rel="icon" href="favicon.ico?v=2">
-    <title>Nick Vougioukakis</title>
-    <script src="script.js" async></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" as="image" href='src/blue-wavy-background-webp.webp'>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style2.css" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="style2.css">
+        </noscript>
+        <link rel="icon" href="favicon.ico?v=2">
+        <title>Nick Vougioukakis</title>
+        <script src="script.js" async></script>
+    </head>
 
-<body>
+    <body>
 
-    <!--
+        <!--
     <audio id="bg-sound" loop autoplay>
         <source src="src/sounds/bg-sound.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>-->
-    <img src="src/blue-wavy-background-webp.webp" id="image-1">
+        <img src="src/blue-wavy-background-webp.webp" id="image-1">
 
-    <audio  id="click-sound">
-        <source src="src/sounds/click.mp3" type="audio/mp3">
-    </audio>
+        <audio id="click-sound">
+            <source src="src/sounds/click.mp3" type="audio/mp3">
+        </audio>
 
-    <div id="load-screen" class="loading">
-        <p id="welcome" style="opacity: 0; transition: opacity .4s;">Welcome!</p>
-    </div>
+        <div id="load-screen" class="loading">
+            <p id="welcome" style="opacity: 0; transition: opacity .4s;">Welcome!</p>
+        </div>
 
-    <div id="content-wrap">
+        <div id="content-wrap">
 
-        <!-- left panel -->
-        <div class="contents" id="my-card">
-            <div class="home card" id="my-card-inner">
-                <div class="info">
-                    <div>
-                        <h1 id="name-text" style="margin-top: 0px; margin-bottom: 0px; color: #d1ecf8;">Nikos Vougioukakis</h1>
+            <!-- left panel -->
+            <div class="contents" id="my-card">
+                <div class="home card" id="my-card-inner">
+                    <div class="info">
+                        <div>
+                            <h1 id="name-text" style="margin-top: 0px; margin-bottom: 0px; color: #d1ecf8;">Nikos
+                                Vougioukakis</h1>
+                        </div>
+                        <p style="justify-content: center; margin: 0; align-items: center;">
+                            BSc Mathematics at
+                            <a class="link" href="http://math.uoc.gr/en/index.html" target="_blank">University of
+                                Crete</a>
+                            <br>
+                            Aspiring Software Developer
+                        </p>
+                        <img class="uoc" src="src/Logo.png">
+
+
+
                     </div>
-                    <p style="justify-content: center; margin: 0; align-items: center;">
-                        BSc Mathematics at 
-                        <a class="link" href="http://math.uoc.gr/en/index.html" target="_blank">University of Crete</a>
-                        <br>
-                        Aspiring Software Developer
-                    </p>
-                    <img class="uoc" src="src/Logo.png">
-                
-                    
+
+                    <div class="header">
+                        <div class="nav">
+                            <nav>
+                                <ul id="nav-list">
+                                    <li><a class="current nav" id="homeNav" onclick="loadContent('home')">Home</a></li>
+                                    <li><a class="not-current nav" id="eduNav"
+                                            onclick="loadContent('education')">Education</a></li>
+                                    <li><a class="not-current" id="projNav"
+                                            onclick="loadContent('projects')">Projects</a></li>
+                                    <li><a class="not-current nav" id="hubNav"
+                                            onclick="loadContent('learning hub')">Learning Hub</a></li>
+                                    <!--<li><a class="not-current" id="CV" href="" download="cv.pdf">My CV</li>-->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <footer class="footer">
+                        <div class="options" style="display: none;">
+                            <a onclick="toggleMute();"><img id="sound-option-icon" src="src/icons/sound-on.svg"
+                                    style="width: 4vh;"></a>
+                        </div>
+                        <div class="buttons-div">
+                            <a href="https://www.linkedin.com/in/nikolaos-vougioukakis-66a2b7256/"
+                                style="background-color: #0077b5;" target="_blank" class="buttons"><img
+                                    class="button-icon" src="src/icons8-linkedin.svg"></a>
+                            <a href="https://github.com/vougioukakis" class="buttons" target="_blank"><img
+                                    class="button-icon" src="src/icons8-github.svg"></a>
+                            <a class="buttons" style="background-color: #C71610; cursor: pointer;"
+                                onclick="toggleMail();"><img class="button-icon" src="src/icons8-gmail.svg"></a>
+
+
+                        </div>
+                        <div id="mailBox" style="display: none; ">
+                            <p style="font-size: 14px;">Gmail: vougioukakis99 (at) gmail (dot) com</p>
+                        </div>
+
+                        <div id="footer-info">
+                            <p style="font-size: 10px;" id="curr-year">Nikolaos Vougioukakis</p>
+                            <p style="font-size: 10px; margin-inline: 20%;">Background designed by Freepik, icons by
+                                Icons8 and svgrepo, music by <a class="link"
+                                    href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153275">UNIVERSFIELD</a>
+                                from <a class="link"
+                                    href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153275">Pixabay</a>,
+                                click sound by <a class="link" href="https://freesound.org/s/269157/">Heshl</a></p>
+
+                        </div>
+                    </footer>
+                </div>
+
+
+            </div>
+
+
+            <!-- right -->
+
+            <div class="contents-flexbox" id="right">
+
+                <div class="contents-x2" id="mainContent">
 
                 </div>
 
-                <div class="header">
-                    <div class="nav">
-                        <nav>
-                            <ul id="nav-list">
-                                <li><a class="current nav" id="homeNav" onclick="loadContent('home')">Home</a></li>
-                                <li><a class="not-current nav" id="eduNav" onclick="loadContent('education')">Education</a></li>
-                                <!--<li><a class="not-current" id="projNav" onclick="loadContent('projects')">Projects</a></li>-->
-                                <li><a class="not-current nav" id="hubNav" onclick="loadContent('learning hub')">Learning Hub</a></li>
-                                <!--<li><a class="not-current" id="CV" href="" download="cv.pdf">My CV</li>-->
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <footer class="footer">
-                    <div class="options" style="display: none;">
-                        <a onclick="toggleMute();"><img id="sound-option-icon" src="src/icons/sound-on.svg" style="width: 4vh;"></a>
-                    </div>
-                    <div class="buttons-div">
-                        <a href="https://www.linkedin.com/in/nikolaos-vougioukakis-66a2b7256/" style="background-color: #0077b5;" target="_blank" class="buttons"><img class="button-icon"  src="src/icons8-linkedin.svg"></a>
-                        <a href="https://github.com/vougioukakis" class="buttons" target="_blank"><img class="button-icon"  src="src/icons8-github.svg"></a>
-                        <a class="buttons" style="background-color: #C71610; cursor: pointer;" onclick="toggleMail();"><img class="button-icon"  src="src/icons8-gmail.svg"></a>
-
-                        
-                    </div>
-                    <div id="mailBox" style="display: none; "><p style="font-size: 14px;">Gmail: vougioukakis99 (at) gmail (dot) com</p></div>
-                    
-                    <div id="footer-info">
-                        <p style="font-size: 10px;" id="curr-year">Nikolaos Vougioukakis</p>
-                        <p style="font-size: 10px; margin-inline: 20%;">Background designed by Freepik, icons by Icons8 and svgrepo, music by <a class="link" href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153275">UNIVERSFIELD</a> from <a class="link" href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153275">Pixabay</a>, click sound by <a class="link" href="https://freesound.org/s/269157/">Heshl</a></p>
-                    
-                    </div>
-                </footer>
             </div>
 
-        
-        </div>
-
-
-        <!-- right -->
-
-        <div class="contents-flexbox" id="right"> 
-
-            <div class="contents-x2" id="mainContent">
-    
-            </div>
 
         </div>
+        <script defer src="more-content.js"></script>
+        <script>setTimeout(() => {
+                document.getElementById('welcome').style.opacity = '1';
+            }, 10); //this is how long u have to wait for the welcome to appear
 
-        
-    </div>
-    <script defer src="more-content.js"></script>
-    <script>setTimeout(() => {
-        document.getElementById('welcome').style.opacity='1';
-      }, 10); //this is how long u have to wait for the welcome to appear
-    
-    </script>
-</body>
+        </script>
+    </body>
 
 
 

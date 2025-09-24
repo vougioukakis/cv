@@ -52,12 +52,12 @@ function loadEducationContent() {
           </div>
         </div>
     `;
-  
+
     document.getElementById('mainContent').innerHTML = educationContent;
-  }
-  
-  
-  function loadLHContent() {
+}
+
+
+function loadLHContent() {
     const learning_hub_content = `
     <div class="contents">
               <div class="card" id="links">
@@ -80,14 +80,26 @@ function loadEducationContent() {
   
     `;
     document.getElementById('mainContent').innerHTML = learning_hub_content;
-  }
+}
 
-  function loadProjectsContent() {
+function loadProjectsContent() {
     const projectsContent = `
           <div class="contents">
               <div class="card">
-                  <h3 class="card-title">Straight Line Acceleration Simulation for cars</h3>
-                  <p class="proj-description"></p>
+                  <h3 class="card-title"><strong>Financers:</strong> a personal finanance SaaS</h3>
+                    <p class="proj-description">A personal finance web application that helps users
+                     manage their income, expenses, and budgets effectively, while providing analytics
+                     and insights. Built with NextJS, it offers features like transaction tracking,
+                     budget creation, and financial goal setting. The app utilizes NeonDB Serverless
+                    Postgres for data storage and Clerk for secure user authentication and account management.</p>
+              <div class="card">
+                  <h3 class="card-title">Nitro's Drag Strip</h3>
+                  <p class="proj-description"><p class="proj-description">
+                    A web application that lets you select a car and experience a realistic, interactive
+                     acceleration simulation. The app models real-world physics using numerical solutions
+                    to differential equations, incorporates authentic car specifications, and features 
+                    genuine engine sounds for an immersive experience.
+                    </p>
                   <img class="proj-image" src="">
                   <img class="proj-image" src="">
               </div>
@@ -99,7 +111,11 @@ function loadEducationContent() {
               </div>
               <div class="card">
                   <h3 class="card-title">Ferrari Challenge Racecar Showcase</h3>
-                  <p class="proj-description"></p>
+                  <p class="proj-description">
+                    A sleek, frontend-focused web app showcasing Ferrari’s challenge
+                     racecars. Users can browse through a carousel of cars, view 
+                      images, and read key specifications and descriptions.
+                  </p>
                   <img class="proj-image" src="">
                   <img class="proj-image" src="">
               </div>
@@ -109,43 +125,43 @@ function loadEducationContent() {
 
     document.getElementById('mainContent').innerHTML = projectsContent;
 
-  }
-  const posts = [
+}
+const posts = [
 
     {
-      title: "The SOLID Principles of Object-Oriented Programming Explained in Plain English",
-      source: "www.freecodecamp.org",
-      href: "https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/",
-      img: "src/posts/solid.jpeg"
+        title: "The SOLID Principles of Object-Oriented Programming Explained in Plain English",
+        source: "www.freecodecamp.org",
+        href: "https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/",
+        img: "src/posts/solid.jpeg"
     },
     {
-      title: "The Math behind the Adam Optimizer",
-      source: "towardsdatascience.com",
-      href: "https://towardsdatascience.com/the-math-behind-adam-optimizer-c41407efe59b#5ff9",
-      img: "src/posts/adam-opt.webp"
+        title: "The Math behind the Adam Optimizer",
+        source: "towardsdatascience.com",
+        href: "https://towardsdatascience.com/the-math-behind-adam-optimizer-c41407efe59b#5ff9",
+        img: "src/posts/adam-opt.webp"
     },
-  
+
     {
-      title: "What is an autoencoder?",
-      source: "ibm.com",
-      href: "https://www.ibm.com/topics/autoencoder",
-      img: "src/posts/autoencoder.png"
+        title: "What is an autoencoder?",
+        source: "ibm.com",
+        href: "https://www.ibm.com/topics/autoencoder",
+        img: "src/posts/autoencoder.png"
     },
-  
+
     {
-      title: "Abusing Generative Adversarial Networks to Make 8-bit Pixel Art",
-      source: "medium.com",
-      href: "https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7",
-      img: "src/posts/pixel-art.png"
-      
+        title: "Abusing Generative Adversarial Networks to Make 8-bit Pixel Art",
+        source: "medium.com",
+        href: "https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7",
+        img: "src/posts/pixel-art.png"
+
     }
     // Add more posts as needed
-  ];
-  
-  function generatePostsHTML(posts) {
+];
+
+function generatePostsHTML(posts) {
     let html = '';
     posts.forEach(post => {
-      html += `
+        html += `
         <a class="post" href="${post.href}"  style="background-image: url('${post.img}')">
           <div>
             <div class="post-title-cont">
@@ -158,4 +174,4 @@ function loadEducationContent() {
         </a>`;
     });
     return html;
-  }
+}
