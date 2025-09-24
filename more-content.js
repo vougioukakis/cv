@@ -86,20 +86,22 @@ function loadProjectsContent() {
     const projectsContent = `
           <div class="contents">
               <div class="card">
-                  <h3 class="card-title">Financers: a personal finanance SaaS</h3>
+                  <h3 class="card-title">Financers: A Personal Finance SaaS</h3>
                     <p class="proj-description">A personal finance web application that helps users
-                     manage their income, expenses, and budgets effectively, while providing analytics
-                     and insights. Built with NextJS, it offers features like transaction tracking,
-                     budget creation, and financial goal setting. The app utilizes NeonDB Serverless
-                    Postgres for data storage and Clerk for secure user authentication and account management.</p>
+                     manage their income, expenses, and budgets effectively. It provides analytics
+                     and insights, like Net Worth, Cash Flow and Spendings/Income ratio. Built with NextJS,
+                      it offers features like transaction tracking, budget creation, and financial goal setting. 
+                      The app utilizes NeonDB Serverless Postgres for data storage and Clerk for secure user
+                     authentication and account management.</p>
               </div>
               <div class="card">
                   <h3 class="card-title">Nitro's Drag Strip</h3>
                   <p class="proj-description"><p class="proj-description">
                     A web application that lets you select a car and experience a realistic, interactive
-                     acceleration simulation. The app models real-world physics using numerical solutions
-                    to differential equations, incorporates authentic car specifications, and features 
-                    genuine engine sounds for an immersive experience.
+                     acceleration simulation. The app models real-world physics, including load transfers
+                     and tire slip ratio, using numerical solutions to differential equations, incorporates 
+                     authentic car specifications, and features genuine engine sounds for an immersive experience.
+                     Choose your car, your tires, hit the gas, and feel the thrill of the drag strip!
                     </p>
                   <img class="proj-image" src="">
                   <img class="proj-image" src="">
