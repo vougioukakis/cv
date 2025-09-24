@@ -92,6 +92,7 @@ function loadProjectsContent() {
                      and insights. Built with NextJS, it offers features like transaction tracking,
                      budget creation, and financial goal setting. The app utilizes NeonDB Serverless
                     Postgres for data storage and Clerk for secure user authentication and account management.</p>
+              </div>
               <div class="card">
                   <h3 class="card-title">Nitro's Drag Strip</h3>
                   <p class="proj-description"><p class="proj-description">
@@ -119,8 +120,6 @@ function loadProjectsContent() {
                   <img class="proj-image" src="">
                   <img class="proj-image" src="">
               </div>
-
-
                 `;
 
     document.getElementById('mainContent').innerHTML = projectsContent;
